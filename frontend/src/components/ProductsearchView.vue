@@ -2,7 +2,7 @@
 
     <v-data-table
         :headers="headers"
-        :items="productSearch"
+        :items="productsearch"
         :items-per-page="5"
         class="elevation-1"
     ></v-data-table>
@@ -13,7 +13,7 @@
     const axios = require('axios').default;
 
     export default {
-        name: 'ProductSearchView',
+        name: 'ProductsearchView',
         props: {
             value: Object,
             editMode: Boolean,
@@ -23,14 +23,14 @@
             headers: [
                 { text: "id", value: "id" },
             ],
-            productSearch : [],
+            productsearch : [],
         }),
           async created() {
-            var temp = await axios.get(axios.fixUrl('/productSearches'))
+            var temp = await axios.get(axios.fixUrl('/productsearches'))
 
-            temp.data._embedded.productSearches.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
+            temp.data._embedded.productsearches.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
 
-            this.productSearch = temp.data._embedded.productSearches;
+            this.productsearch = temp.data._embedded.productsearches;
         },
         methods: {
         }

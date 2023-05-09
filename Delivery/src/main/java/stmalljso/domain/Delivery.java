@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
 import stmalljso.DeliveryApplication;
-import stmalljso.domain.DeliveryCancelled;
+import stmalljso.domain.Deliverycancelled;
 import stmalljso.domain.Deliverystarted;
 
 @Entity
@@ -35,8 +35,8 @@ public class Delivery {
 
     @PostUpdate
     public void onPostUpdate() {
-        DeliveryCancelled deliveryCancelled = new DeliveryCancelled(this);
-        deliveryCancelled.publishAfterCommit();
+        Deliverycancelled deliverycancelled = new Deliverycancelled(this);
+        deliverycancelled.publishAfterCommit();
     }
 
     public static DeliveryRepository repository() {
@@ -46,7 +46,7 @@ public class Delivery {
         return deliveryRepository;
     }
 
-    public static void deliveryStart(OrderPlaced orderPlaced) {
+    public static void deliveryStart(Orderplaced orderplaced) {
         /** Example 1:  new item 
         Delivery delivery = new Delivery();
         repository().save(delivery);
@@ -57,7 +57,7 @@ public class Delivery {
 
         /** Example 2:  finding and process
         
-        repository().findById(orderPlaced.get???()).ifPresent(delivery->{
+        repository().findById(orderplaced.get???()).ifPresent(delivery->{
             
             delivery // do something
             repository().save(delivery);
@@ -70,24 +70,24 @@ public class Delivery {
 
     }
 
-    public static void deliveryCancel(OrderCancelled orderCancelled) {
+    public static void deliveryCancel(Ordercancelled ordercancelled) {
         /** Example 1:  new item 
         Delivery delivery = new Delivery();
         repository().save(delivery);
 
-        DeliveryCancelled deliveryCancelled = new DeliveryCancelled(delivery);
-        deliveryCancelled.publishAfterCommit();
+        Deliverycancelled deliverycancelled = new Deliverycancelled(delivery);
+        deliverycancelled.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
         
-        repository().findById(orderCancelled.get???()).ifPresent(delivery->{
+        repository().findById(ordercancelled.get???()).ifPresent(delivery->{
             
             delivery // do something
             repository().save(delivery);
 
-            DeliveryCancelled deliveryCancelled = new DeliveryCancelled(delivery);
-            deliveryCancelled.publishAfterCommit();
+            Deliverycancelled deliverycancelled = new Deliverycancelled(delivery);
+            deliverycancelled.publishAfterCommit();
 
          });
         */

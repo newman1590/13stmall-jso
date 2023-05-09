@@ -11,8 +11,8 @@ import stmalljso.config.kafka.KafkaProcessor;
 import stmalljso.domain.*;
 
 @Service
-public class ProductSearchViewHandler {
+public class ProductsearchViewHandler {
 
     @Autowired
-    private ProductSearchRepository productSearchRepository;
+    private ProductsearchRepository productsearchRepository;
 }

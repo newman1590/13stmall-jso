@@ -61,7 +61,7 @@ public class Inventory {
 
     }
 
-    public static void deliveryCancel(DeliveryCancelled deliveryCancelled) {
+    public static void deliveryCancel(Deliverycancelled deliverycancelled) {
         /** Example 1:  new item 
         Inventory inventory = new Inventory();
         repository().save(inventory);
@@ -72,7 +72,7 @@ public class Inventory {
 
         /** Example 2:  finding and process
         
-        repository().findById(deliveryCancelled.get???()).ifPresent(inventory->{
+        repository().findById(deliverycancelled.get???()).ifPresent(inventory->{
             
             inventory // do something
             repository().save(inventory);

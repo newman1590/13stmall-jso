@@ -6,8 +6,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import stmalljso.domain.*;
 
 @RepositoryRestResource(
-    collectionResourceRel = "productSearches",
-    path = "productSearches"
+    collectionResourceRel = "productsearches",
+    path = "productsearches"
 )
-public interface ProductSearchRepository
-    extends PagingAndSortingRepository<ProductSearch, Long> {}
+public interface ProductsearchRepository
+    extends PagingAndSortingRepository<Productsearch, Long> {}

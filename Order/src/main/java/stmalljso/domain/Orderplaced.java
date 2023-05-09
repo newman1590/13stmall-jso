@@ -7,11 +7,19 @@ import stmalljso.infra.AbstractEvent;
 
 @Data
 @ToString
-public class OrderPlaced extends AbstractEvent {
+public class Orderplaced extends AbstractEvent {
 
     private Long id;
     private String productname;
     private Long productid;
     private Long userid;
     private Integer qty;
+
+    public Orderplaced(Order aggregate) {
+        super(aggregate);
+    }
+
+    public Orderplaced() {
+        super();
+    }
 }

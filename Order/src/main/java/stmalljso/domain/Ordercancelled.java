@@ -7,7 +7,7 @@ import stmalljso.infra.AbstractEvent;
 
 @Data
 @ToString
-public class OrderCancelled extends AbstractEvent {
+public class Ordercancelled extends AbstractEvent {
 
     private Long id;
     private String productname;
@@ -15,11 +15,11 @@ public class OrderCancelled extends AbstractEvent {
     private Long userid;
     private Integer qty;
 
-    public OrderCancelled(Order aggregate) {
+    public Ordercancelled(Order aggregate) {
         super(aggregate);
     }
 
-    public OrderCancelled() {
+    public Ordercancelled() {
         super();
     }
 }

@@ -6,9 +6,9 @@ import javax.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "ProductSearch_table")
+@Table(name = "Productsearch_table")
 @Data
-public class ProductSearch {
+public class Productsearch {
 
     @Id
     //@GeneratedValue(strategy=GenerationType.AUTO)

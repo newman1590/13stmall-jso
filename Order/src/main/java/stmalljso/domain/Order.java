@@ -5,8 +5,8 @@ import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
 import stmalljso.OrderApplication;
-import stmalljso.domain.OrderCancelled;
-import stmalljso.domain.OrderPlaced;
+import stmalljso.domain.Ordercancelled;
+import stmalljso.domain.Orderplaced;
 
 @Entity
 @Table(name = "Order_table")
@@ -29,11 +29,11 @@ public class Order {
 
     @PostPersist
     public void onPostPersist() {
-        OrderPlaced orderPlaced = new OrderPlaced(this);
-        orderPlaced.publishAfterCommit();
+        Orderplaced orderplaced = new Orderplaced(this);
+        orderplaced.publishAfterCommit();
 
-        OrderCancelled orderCancelled = new OrderCancelled(this);
-        orderCancelled.publishAfterCommit();
+        Ordercancelled ordercancelled = new Ordercancelled(this);
+        ordercancelled.publishAfterCommit();
     }
 
     public static OrderRepository repository() {
@@ -83,7 +83,7 @@ public class Order {
 
     }
 
-    public static void updateStatus(DeliveryCancelled deliveryCancelled) {
+    public static void updateStatus(Deliverycancelled deliverycancelled) {
         /** Example 1:  new item 
         Order order = new Order();
         repository().save(order);
@@ -92,7 +92,7 @@ public class Order {
 
         /** Example 2:  finding and process
         
-        repository().findById(deliveryCancelled.get???()).ifPresent(order->{
+        repository().findById(deliverycancelled.get???()).ifPresent(order->{
             
             order // do something
             repository().save(order);

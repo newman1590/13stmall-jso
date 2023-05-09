@@ -7,12 +7,11 @@ import stmalljso.infra.AbstractEvent;
 
 @Data
 @ToString
-public class DeliveryCancelled extends AbstractEvent {
+public class Ordercancelled extends AbstractEvent {
 
     private Long id;
-    private Long orderid;
+    private String productname;
     private Long productid;
-    private String prodectname;
+    private Long userid;
     private Integer qty;
-    private String status;
 }

@@ -2,7 +2,7 @@
 
     <v-card outlined>
         <v-card-title>
-            ProductSearch # {{$route.params.id }}
+            Productsearch # {{$route.params.id }}
         </v-card-title>
 
         <v-card-text>
@@ -15,7 +15,7 @@
   const axios = require('axios').default;
 
   export default {
-    name: 'ProductSearchViewDetail',
+    name: 'ProductsearchViewDetail',
     props: {
       value: Object,
     },
@@ -24,7 +24,7 @@
     }),
     async created() {
       var params = this.$route.params;
-      var temp = await axios.get(axios.fixUrl('/productSearches/' + params.id))
+      var temp = await axios.get(axios.fixUrl('/productsearches/' + params.id))
 
       this.item = temp.data;
 

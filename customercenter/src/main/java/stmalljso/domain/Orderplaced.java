@@ -1,13 +1,11 @@
 package stmalljso.domain;
 
 import java.util.*;
-import lombok.*;
-import stmalljso.domain.*;
+import lombok.Data;
 import stmalljso.infra.AbstractEvent;
 
 @Data
-@ToString
-public class OrderCancelled extends AbstractEvent {
+public class Orderplaced extends AbstractEvent {
 
     private Long id;
     private String productname;

@@ -5,11 +5,12 @@ import lombok.Data;
 import stmalljso.infra.AbstractEvent;
 
 @Data
-public class OrderPlaced extends AbstractEvent {
+public class Deliverycancelled extends AbstractEvent {
 
     private Long id;
-    private String productname;
+    private Long orderid;
     private Long productid;
-    private Long userid;
+    private String prodectname;
     private Integer qty;
+    private String status;
 }
